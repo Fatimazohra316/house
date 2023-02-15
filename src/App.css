@@ -151,6 +151,7 @@
   width: 30rem;
   border-radius: 8px;
   padding: 2% 5%;
+  border: none;
   align-items: center;
 
   /* height: 50px; */
@@ -237,57 +238,68 @@
   width: 100px;
   height: 100px;
 }
-.category{
+
+.category {
   text-align: center;
   font-size: 19px;
   font-weight: 400;
   color: rgba(67, 67, 130, 1);
   padding: 8%;
 }
-.welcome{
+
+.welcome {
   color: rgba(67, 67, 130, 1);
   font-size: 31px;
   font-weight: 300;
   margin-top: 5%;
 }
-.justine{
+
+.justine {
   font-weight: 800;
 }
-.services{
+
+.services {
   font-size: 23px;
   font-weight: 500;
   color: rgba(67, 67, 130, 1);
   margin-top: 3%;
 }
-.cleaning{
+
+.cleaning {
   margin-left: 1%;
 }
-.mainDiv{
+
+.mainDiv {
   /* display: flex; */
   margin-top: 5%;
 }
-.itemImage{
+
+.itemImage {
   border-radius: 20px;
-  
+
   width: 15rem;
 }
-.itemDiv{
+
+.itemDiv {
   display: flex;
   align-items: flex-start;
   /* margin-left: 5%; */
 }
-.cleanings{
+
+.cleanings {
   font-size: 29px;
   font-weight: 500;
   color: rgba(67, 67, 130, 1);
 }
-.price{
+
+.price {
   font-size: 26.33px;
   font-weight: 700;
   color: rgba(95, 96, 185, 1);
   margin-top: 5%;
 }
-.durationButton{
+
+.durationButton {
   background-color: rgba(237, 237, 247, 1);
   color: rgba(67, 67, 130, 1);
   border: none;
@@ -298,42 +310,49 @@
   align-items: center;
   margin-top: 10%;
 }
-.buttonDiv{
+
+.buttonDiv {
   display: flex;
   justify-content: space-between;
   width: 80%;
 }
-.cleaningDiv{
+
+.cleaningDiv {
   margin-left: 3%;
 }
-.description{
+
+.description {
   font-size: 29px;
   font-weight: 500;
   color: rgba(95, 96, 185, 1);
   margin-top: 3%;
 }
-.des{
+
+.des {
   font-size: 20px;
   color: rgba(63, 61, 86, 1);
   font-weight: 400;
   margin-top: 2%;
 }
-.secondMainDiv{
+
+.secondMainDiv {
   display: grid;
   grid-template-columns: 30% 30% 30%;
   justify-content: space-around;
   margin-bottom: 10%;
-  
+
 
 }
-.secondService{
+
+.secondService {
   height: 200px;
   width: 100%;
   margin-top: 10%;
   border-radius: 12px 12px 0px 0px;
   box-shadow: 0px 0px 10px rgba(225, 204, 255, 0.25);
 }
-.categoryButton{
+
+.categoryButton {
   border: 0;
   font-size: 10px;
   font-weight: 600;
@@ -343,33 +362,38 @@
   margin-left: 5%;
   margin-top: 10px;
 }
-.categorybutton{
+
+.categorybutton {
   border: 0;
   position: absolute;
   font-size: 10px;
   font-weight: 600;
-  color: #fff ;
-  background-color: rgba(95, 96, 185, 1) ;
+  color: #fff;
+  background-color: rgba(95, 96, 185, 1);
   padding: 5px 15px;
   border-radius: 17px;
   margin-left: 11%;
   margin-top: 9.75%;
 }
-.rating{
+
+.rating {
   color: rgba(75, 177, 58, 1);
   font-size: 14px;
   font-weight: 600;
   margin-left: 4%;
 }
-.ratingDiv{
+
+.ratingDiv {
   display: flex;
   align-items: center;
 }
-.secondCard{
- 
+
+.secondCard {
+
   /* border-radius: 12px; */
 }
-.washroomDiv{
+
+.washroomDiv {
   border-radius: 0px 0px 12px 12px;
   box-shadow: 0px 0px 10px rgba(225, 204, 255, 0.25);
   /* padding-left: 10%; */
@@ -380,7 +404,8 @@
   color: rgba(67, 67, 130, 1);
 
 }
-.cardMainDivs{
+
+.cardMainDivs {
   display: grid;
   grid-template-columns: 25% 25% 25%;
   justify-content: space-between;
@@ -388,8 +413,189 @@
   margin-top: 5%;
   margin-bottom: 10%;
 }
+
 .card-bodys {
   box-shadow: 0px 0px 8.90401px rgba(225, 204, 255, 0.4);
   border-radius: 19.2008px;
   margin-top: 10%;
+}
+
+.historical {
+  font-size: 37px;
+  font-weight: 500;
+  color: rgba(67, 67, 130, 1);
+  margin-top: 3%;
+}
+
+.pending {
+  background-color: rgba(95, 96, 185, 1) !important;
+  color: #fff !important;
+  padding: .5rem 4% !important;
+  font-weight: 500;
+}
+
+.completed {
+  background-color: rgba(246, 247, 249, 1) !important;
+  color: rgba(67, 67, 130, 1) !important;
+  padding: .5rem 4% !important;
+  font-weight: 500;
+  margin-left: 2%;
+}
+
+.buttonPart {
+  margin-top: 4%;
+}
+
+.serviceName {
+  background: #5F60B9;
+  border: 1px solid #5F60B9;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2.5rem;
+  margin-top: 5%;
+}
+.serviceNames {
+  background: #F6F7F9;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 4rem;
+  margin-top: 3%;
+  color: #434382;
+}
+
+.names {
+  font-weight: 600;
+  color: #fff;
+  margin-left: 1rem;
+}
+
+.bookingId {
+  display: flex;
+  justify-content: space-around;
+  width: 76%;
+  font-weight: 600;
+  color: #fff;
+}
+.nam {
+  font-weight: 600;
+  color: #434382;
+  margin-left: 1rem;
+}
+
+.booking {
+  display: flex;
+  justify-content: space-around;
+  width: 76%;
+  font-weight: 600;
+  color: #434382;
+}
+.rectangleBox{
+  background-color: #5F60B9;
+  border-radius: 11px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  padding: 1%;
+  align-items: center;
+  margin-top: 3%;
+}
+.support{
+  margin-left: .5rem;
+}
+.sweep{
+  width: 2vw;
+}
+.todayButton{
+  background-color: #434382 !important;
+  color: #fff !important ;
+  padding: 15px 4rem;
+  margin-top: 4%;
+  /* display: block; */
+  /* margin: 0 auto !important; */
+}
+.btnDiv{
+  display: flex;
+  justify-content: center;
+}
+
+.round{
+  border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+
+}
+.tri-right.btm-left:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 0px;
+  right: auto;
+  top: auto;
+	bottom: -6px;
+	border: 15px solid;
+	border-color: transparent transparent transparent #5657A7;
+}
+.talk-bubble {
+	margin: 15px;
+  display: inline-block;
+  position: relative;
+	/* width: 200px; */
+	height: auto;
+	background-color:  #5657A7;
+}
+.talktext{
+  padding: 0.5rem 2rem 0rem 2rem;
+	text-align: left;
+  line-height: 1.5em;
+  color: #fff;
+}
+.chatBubble{
+  display: flex;
+  align-items: flex-end;
+  width: 50%;
+  margin-top: 3%;
+}
+.image5{
+  width: 3rem;
+}
+.time{
+  margin-left: 5%;
+}
+.tri-right.btm-right:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: 0px;
+	bottom: -5px;
+	border: 12px solid;
+	border-color: #EFEBFB #EFEBFB  transparent transparent;
+}
+.talk-bubbles {
+	margin: 15px;
+  display: inline-block;
+  position: relative;
+	/* width: 200px; */
+	height: auto;
+	background-color:  #EFEBFB;
+  float: right;
+}
+.talktexts{
+  padding: 0.5rem 2rem 0rem 2rem;
+	text-align: left;
+  line-height: 1.5em;
+  color: #434382;
+}
+.chatBubbles{
+  width: 50%;
+  float: right;
 }

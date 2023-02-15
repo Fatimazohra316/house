@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { json, useNavigate } from "react-router-dom";
 import image1 from "../images/housebubble.png"
 
 
@@ -15,9 +15,10 @@ function SignUp() {
   const [message,setMessage] = useState();
   const [check,setCheck] = useState(false)
   const [user,setUser] = useState(false)
+  const [arr,setArr] = useState({})
 
 
-
+  // console.log(data);
   function submitUser(e) {
     e.preventDefault();
     const data = new FormData();
@@ -35,9 +36,20 @@ function SignUp() {
       body: data
     }).then((response) => response.json())
     .then((data) => {
+      console.log(data);
+      // console.log(data);
+      // setArr(data.data)
+     
+      // console.log(arr);
+      if(data.error){
+        setCheck(true)
+        setMessage(data.error)
+        console.log(data.error);
+      }
       if(data?.error?.email){
         setCheck(true)
         setMessage(data.error.email)
+
        
       }
       if (data?.error?.phone){
@@ -56,12 +68,14 @@ function SignUp() {
         setCheck(true)
         setMessage(data.error.username)
       }
-      else if (!data?.error?.email && !data?.error?.phone && !data?.error?.username && !data?.error?.cpass && !data?.error?.name){
-        navigate("signin")
+      else if (!data.error && !data?.error?.email && !data?.error?.phone && !data?.error?.username && !data?.error?.cpass && !data?.error?.name){
+        // navigate("/signin")
         setUser(true)
       }
       
     });
+    console.log(arr
+      );
     // fetch('https://cleaningapp.8tkt.com/public/api/signup', {
     //     method: 'POST',
     //     body: JSON.stringify(
@@ -86,7 +100,7 @@ function SignUp() {
 
 
   }   
-  // console.log(number); 
+  // console.log(data); 
   return (
     <div>
       <div className='signUp container'>
@@ -97,14 +111,14 @@ function SignUp() {
             <div><input onChange={(e) => setName(e.target.value)} className='name' placeholder='Enter your Full Name' /></div>
             <div><input onChange={(e)=>setNumber(e.target.value)}  className='name' placeholder='Enter Your Number' /></div>
             <div><input  onChange={(e)=>setEmail(e.target.value)}    className='name' placeholder='Enter Your Email Address' /></div>
-            <div><input onChange={(e)=>setPassword(e.target.value)} className='name' placeholder='Enter your Password' /></div>
+            <div><input onChange={(e)=>setPassword(e.target.value)} type="password" className='name' placeholder='Enter your Password' /></div>
             <div><input onChange={(e)=>setUsername(e.target.value)} className='name' placeholder='Enter your username' /></div>
             <div><button className='signUpBtn'>Sign Up</button></div>
             {check ? <p className="message">{message} *</p> : null}
             {user? <p className="message2">User Created Successfully</p> : null}
 
           </form>
-          <p className='account'>Already have an Account? <span onClick={() => navigate("signin")} className='signIn'> Sign In</span></p>
+          <p className='account'>Already have an Account? <span onClick={() => navigate("/signin")} className='signIn'> Sign In</span></p>
         </div>
         <div>
           <img className="houseBubble" src={image1} />

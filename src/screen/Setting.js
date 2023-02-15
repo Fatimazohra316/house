@@ -4,7 +4,7 @@ import React from "react";
 function Setting() {
     return (
         <div>
-            <p>Setting</p>
+            hello world
         </div>
     )
 }
