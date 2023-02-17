@@ -159,7 +159,7 @@
 }
 
 .inputdiv {
-  border: none;
+  border: none !important;
   margin-left: 2%;
   color: rgba(67, 67, 130, 1);
 
@@ -444,6 +444,7 @@
 
 .buttonPart {
   margin-top: 4%;
+  display: flex;
 }
 
 .serviceName {
@@ -456,6 +457,7 @@
   padding: 1.5rem 2.5rem;
   margin-top: 5%;
 }
+
 .serviceNames {
   background: #F6F7F9;
   border: 1px solid #fff;
@@ -481,6 +483,7 @@
   font-weight: 600;
   color: #fff;
 }
+
 .nam {
   font-weight: 600;
   color: #434382;
@@ -494,7 +497,8 @@
   font-weight: 600;
   color: #434382;
 }
-.rectangleBox{
+
+.rectangleBox {
   background-color: #5F60B9;
   border-radius: 11px;
   color: #fff;
@@ -506,96 +510,317 @@
   align-items: center;
   margin-top: 3%;
 }
-.support{
+
+.support {
   margin-left: .5rem;
 }
-.sweep{
+
+.sweep {
   width: 2vw;
 }
-.todayButton{
+
+.todayButton {
   background-color: #434382 !important;
-  color: #fff !important ;
+  color: #fff !important;
   padding: 15px 4rem;
   margin-top: 4%;
   /* display: block; */
   /* margin: 0 auto !important; */
 }
-.btnDiv{
+
+.btnDiv {
   display: flex;
   justify-content: center;
 }
 
-.round{
+.round {
   border-radius: 30px;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
 
 }
-.tri-right.btm-left:after{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-	left: 0px;
+
+.tri-right.btm-left:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0px;
   right: auto;
   top: auto;
-	bottom: -6px;
-	border: 15px solid;
-	border-color: transparent transparent transparent #5657A7;
+  bottom: -6px;
+  border: 15px solid;
+  border-color: transparent transparent transparent #5657A7;
 }
+
 .talk-bubble {
-	margin: 15px;
+  margin: 15px;
   display: inline-block;
   position: relative;
-	/* width: 200px; */
-	height: auto;
-	background-color:  #5657A7;
+  /* width: 200px; */
+  height: auto;
+  background-color: #5657A7;
 }
-.talktext{
+
+.talktext {
   padding: 0.5rem 2rem 0rem 2rem;
-	text-align: left;
+  text-align: left;
   line-height: 1.5em;
   color: #fff;
 }
-.chatBubble{
+
+.chatBubble {
   display: flex;
   align-items: flex-end;
   width: 50%;
   margin-top: 3%;
 }
-.image5{
+
+.image5 {
   width: 3rem;
 }
-.time{
+
+.time {
   margin-left: 5%;
 }
-.tri-right.btm-right:after{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
+
+.tri-right.btm-right:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
   left: auto;
-	right: 0px;
-	bottom: -5px;
-	border: 12px solid;
-	border-color: #EFEBFB #EFEBFB  transparent transparent;
+  right: 0px;
+  bottom: -5px;
+  border: 12px solid;
+  border-color: #EFEBFB #EFEBFB transparent transparent;
 }
+
 .talk-bubbles {
-	margin: 15px;
+  margin: 15px;
   display: inline-block;
   position: relative;
-	/* width: 200px; */
-	height: auto;
-	background-color:  #EFEBFB;
-  float: right;
+  /* width: 200px; */
+  height: auto;
+  background-color: #EFEBFB;
+  /* float: right; */
 }
-.talktexts{
+
+.talktexts {
   padding: 0.5rem 2rem 0rem 2rem;
-	text-align: left;
+  text-align: left;
   line-height: 1.5em;
   color: #434382;
 }
-.chatBubbles{
+
+/* .chatBubbles{
   width: 50%;
   float: right;
+} */
+.times {
+  /* margin-left: 5%; */
+  /* float: right; */
+}
+
+.bubbleDiv {
+  /* float: right; */
+  display: block;
+  /* margin-left: auto; */
+}
+
+.messageDiv {
+  /* margin-top: 4%; */
+  width: 99%;
+  height: 50px;
+  background: rgba(239, 235, 250, 0.7);
+  border-radius: 8px;
+  border: none;
+  padding: 1rem;
+
+
+}
+
+.messageDiv ::placeholder {
+  color: #5657A7 !important;
+}
+
+.messagess {
+  display: grid;
+  grid-template-columns: 95% 5%;
+  align-items: center;
+  /* margin-top: 10%; */
+}
+
+.chatBubbles {
+  display: flex;
+  justify-content: end;
+  /* margin-left: 90%; */
+  /* float: right; */
+  /* position: absolute; */
+  /* right: 20%; */
+  /* top: 10%; */
+}
+
+.continueButton {
+  background-color: #434382 !important;
+  color: #fff !important;
+  width: 20%;
+  height: 40px;
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+.continueDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.stepper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.ones {
+  border-radius: 30px !important;
+  background-color: #5F60B9 !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  display: block;
+  margin: 0 auto;
+  border: none;
+}
+
+.two {
+  border-radius: 30px !important;
+  background-color: white !important;
+  color: #5F60B9 !important;
+  padding: 10px 20px !important;
+  border: 1px solid #434382 !important;
+  display: block;
+  margin: auto;
+  /* display: block !important; */
+  /* margin: auto; */
+}
+
+.onePart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.dottedLine {
+  margin: 30px;
+  position: relative;
+  top: -20px;
+}
+
+.stepOne {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  margin-top: 8%;
+  justify-content: end;
+}
+
+.serviceText {
+  font-size: 18px;
+  font-weight: 500;
+  color: #434382;
+  margin-top: 2%;
+}
+
+.btn {
+  display: block !important;
+}
+
+.calender {
+  width: 2rem;
+}
+
+.calenderDiv {
+  display: flex;
+  align-items: center;
+  background: #F6F7F9;
+  border-radius: 14.1861px;
+  width: 70%;
+  padding: 1rem ;
+}
+
+.calenderInput {
+  border: none;
+  background: #F6F7F9;
+  margin-left: 2%;
+}
+.calenderInput::placeholder{
+  color: #5F60B9CC;
+  /* margin-left: 2%; */
+}
+.deliveryDates{
+  font-weight: 500;
+  font-size: 19px;
+  color: #434382;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 69%;
+}
+.deliveryCalender{
+  margin-top: 5%;
+}
+.current{
+  font-size: 17px;
+  font-weight: 400;
+  color:  #5F60B9;;
+}
+.deliveryDate{
+  font-weight: 500;
+  font-size: 19px;
+  color: #434382;
+}
+.stepTwo {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  margin-top: 8%;
+  justify-content: end;
+}
+.incrementDiv{
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+.increment {
+  border-radius: 30px !important;
+  background-color: #5F60B9 !important;
+  color: white !important;
+  /* padding: 10px 20px !important; */
+  /* display: block; */
+  margin: 0 auto;
+  border: none;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+}
+.decrement{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.checkbox-round {
+  width: 1.3em;
+  height: 1.3em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.checkbox-round:checked {
+  background-color: gray;
 }

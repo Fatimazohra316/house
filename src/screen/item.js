@@ -1,10 +1,15 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import image from "../images/star.png"
 
 
 function Item(){
-    const location = useLocation()
+    const location = useLocation();
+    const navigate = useNavigate()
+
+    function serviceMove(){
+      navigate("/booking")
+    }
      console.log(location.state.category_name);
     return(
         <div className="container mainDiv">
@@ -21,6 +26,7 @@ function Item(){
            </div>
            <div className="description">Description</div>
            <div className="des">{location.state.category_description}</div>
+           <div className="continueDiv"><button onClick={serviceMove} className="btn continueButton">Continue</button></div>
            
         </div>
         

@@ -17,6 +17,8 @@ import image9 from "../images/settings.png";
 import image10 from "../images/home.png";
 import Item from "../screen/item.js";
 import { useState } from "react";
+import Booking from "../screen/booking.js";
+
 
 
 function AppRouter(){
@@ -71,6 +73,8 @@ function AppRouter(){
             <Route path="services" element={<Service/>}/>
             <Route path="setting" element={<Setting/>}/>
             <Route path="item" element={<Item/>}/>
+            <Route path="booking" element={<Booking/>}/>
+            
           </Routes>
         </>
     )
