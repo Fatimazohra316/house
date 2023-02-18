@@ -717,7 +717,7 @@
   top: -20px;
 }
 
-.stepOne {
+#stepOne {
   display: grid;
   grid-template-columns: 45% 45%;
   margin-top: 8%;
@@ -745,7 +745,7 @@
   background: #F6F7F9;
   border-radius: 14.1861px;
   width: 70%;
-  padding: 1rem ;
+  padding: 1rem;
 }
 
 .calenderInput {
@@ -753,11 +753,13 @@
   background: #F6F7F9;
   margin-left: 2%;
 }
-.calenderInput::placeholder{
+
+.calenderInput::placeholder {
   color: #5F60B9CC;
   /* margin-left: 2%; */
 }
-.deliveryDates{
+
+.deliveryDates {
   font-weight: 500;
   font-size: 19px;
   color: #434382;
@@ -766,30 +768,38 @@
   justify-content: space-between;
   width: 69%;
 }
-.deliveryCalender{
+
+.deliveryCalender {
   margin-top: 5%;
 }
-.current{
+
+.current {
   font-size: 17px;
   font-weight: 400;
-  color:  #5F60B9;;
+  color: #5F60B9;
+  ;
 }
-.deliveryDate{
+
+.deliveryDate {
   font-weight: 500;
   font-size: 19px;
   color: #434382;
 }
-.stepTwo {
+
+#stepTwo {
   display: grid;
   grid-template-columns: 45% 45%;
   margin-top: 8%;
   justify-content: end;
+  display: none;
 }
-.incrementDiv{
+
+.incrementDiv {
   display: flex;
   align-items: center;
   width: 70%;
 }
+
 .increment {
   border-radius: 30px !important;
   background-color: #5F60B9 !important;
@@ -802,25 +812,112 @@
   width: 40px;
   height: 40px;
 }
-.decrement{
+
+.decrement {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: baseline;
 }
-.checkbox-round {
-  width: 1.3em;
-  height: 1.3em;
-  background-color: white;
-  border-radius: 50%;
-  vertical-align: middle;
-  border: 1px solid #ddd;
-  appearance: none;
-  -webkit-appearance: none;
-  outline: none;
-  cursor: pointer;
+
+.contains {
+  display: flex;
+  margin-top: 2%;
 }
 
-.checkbox-round:checked {
-  background-color: gray;
+#male {
+  height: 25px;
+  width: 25px;
+}
+
+.right {
+  margin-left: 3%;
+  font-size: 17px;
+  font-weight: 500;
+  color: #434382;
+  /* margin-top: 1%; */
+}
+
+#female {
+  height: 25px;
+  width: 25px;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  accent-color: purple;
+}
+
+.right span {
+  font-weight: 300;
+}
+
+.priceDiv {
+
+  text-align: center;
+  background: #F6F7F9;
+  border-radius: 14.1861px;
+  width: 70%;
+  padding: 1rem;
+  font-size: 22px;
+  font-weight: 400;
+  color: #434382;
+}
+#stepThree{
+  display: none;
+}
+
+.bookingConfirmed {
+  background-color: #F6F7F9;
+  display: block;
+  margin: auto;
+  width: 50%;
+  box-shadow: 0px 0px 22.3226px #F6F7F9;
+  border-radius: 15.8336px;
+  margin-top: 10%;
+  padding: 5%;
+}
+
+.check {
+  display: block;
+  margin: auto;
+}
+
+.confirmBooking {
+  font-size: 25px;
+  font-weight: 500;
+  color: #434382;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.confirmBooking2 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #5F60B9;
+  text-align: center;
+  margin-top: 3%;
+  width: 66%;
+  display: block;
+  margin: auto;
+
+}
+
+.nextButton {
+  display: block;
+  margin: auto;
+  width: 25%;
+  background: #5F60B9;
+  border-radius: 13.8667px;
+  color: white;
+  border: none;
+  padding: .5rem;
+  font-size: 22px;
+  font-weight: 500;
+  border: none;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
