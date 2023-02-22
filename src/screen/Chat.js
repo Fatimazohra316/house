@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import image1 from "../images/chats.png"
 import image2 from "../images/sweep.png"
 import image3 from "../images/searchs.png"
@@ -7,38 +7,53 @@ import image5 from "../images/sweepicon.png"
 import image6 from "../images/tick.png"
 import image7 from "../images/sendButton.png"
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import image8 from "../images/profile.PNG"
 
 function Chat() {
+    
     const [message,setMessage] = useState("");
-    const [ourmessage,setOurMessage] = useState([])
-     function addMessage(){
-        const data = new FormData
-        data.append("email","test@gmail.com")
-        data.append("message",message)
-        fetch("https://cleaningapp.8tkt.com/public/api/sendmessage",{
-            method : "POST" ,
+    const [ourmessage,setOurMessage] = useState([]);
+    const [result,setResult] = useState(false)
+    const navigate = useNavigate()
+    let email ; 
+    if(localStorage.getItem("data")){
+        const emailData = JSON.parse(localStorage.getItem("data"))
+        email = emailData.data.email;
+
+       }
+   
+   
+        function addMessage(){
+            const data = new FormData
+            data.append("email",email)
+            data.append("message",message)
+            fetch("https://cleaningapp.8tkt.com/public/api/sendmessage",{
+                method : "POST" ,
+                body : data
+            }).then((response) => response.json())
+            .then((data) => {
+            //   console.log(data);
+                         
+              
+            })
+    
+           fetch("https://cleaningapp.8tkt.com/public/api/getmessages",{
+            method : "POST",
             body : data
-        }).then((response) => response.json())
-        .then((data) => {
-        //   console.log(data);
-                     
-          
-        })
-
-       fetch("http://cleaningapp.8tkt.com/public/api/getmessages",{
-        method : "POST",
-        body : data
-       }).then((response)=>response.json()).then((data)=>{
-        // console.log(data);
-        setOurMessage(data.data)
-
-        console.log(ourmessage);
-        
-       })
-     }
+           }).then((response)=>response.json()).then((data)=>{
+            // console.log(data);
+            setOurMessage(data.data)
+    
+            // console.log(ourmessage);
+            
+           })
+         }
+   
 
     return (
-        <div className="container mb-5">
+        <div>
+            {email ? <div className="container mb-5">
             <div><p className="historical"><img src={image1} /><span className="cleaning">Chat Support</span></p></div>
             <div className="rectangleBox">
                 <div><img className="sweep" src={image2} /> <span className="support">HOUSE SWEEPER SUPPORT</span></div>
@@ -115,6 +130,11 @@ function Chat() {
                 <input onChange={(e)=>setMessage(e.target.value)} placeholder="Write your message" className="messageDiv"/>
                 <img onClick={addMessage} src={image7}/>
             </div>
+        </div> :  <div className="d-flex justify-content-center align-items-center">
+        <div className="container loginRequired">
+            <div><img src={image8}/></div>
+             <p>Login required</p>
+            </div></div>}
         </div>
 
     )

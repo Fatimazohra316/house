@@ -19,7 +19,7 @@ function SignIn() {
         // console.log(email);
         data.append("cpass", password);
         // console.log(password);
-        fetch("http://cleaningapp.8tkt.com/public/api/signin",{
+        fetch("https://cleaningapp.8tkt.com/public/api/signin",{
             method : "POST",
             body : data
 

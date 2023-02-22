@@ -38,6 +38,10 @@
   }
 }
 
+.justin {
+  width: 5rem;
+}
+
 .contain {
   max-width: 1600px;
   display: block;
@@ -464,7 +468,7 @@
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   padding: .5rem 4rem;
   margin-top: 3%;
   color: #434382;
@@ -752,6 +756,11 @@
   border: none;
   background: #F6F7F9;
   margin-left: 2%;
+  width: 90%;
+}
+
+.calenderInput:focus {
+  outline: none;
 }
 
 .calenderInput::placeholder {
@@ -791,7 +800,8 @@
   grid-template-columns: 45% 45%;
   margin-top: 8%;
   justify-content: end;
-  display: none;
+  align-items: center;
+  /* display: none; */
 }
 
 .incrementDiv {
@@ -857,17 +867,21 @@ textarea {
 
 .priceDiv {
 
-  text-align: center;
+  /* text-align: center; */
   background: #F6F7F9;
   border-radius: 14.1861px;
-  width: 70%;
+  margin-top: 5%;
   padding: 1rem;
   font-size: 22px;
   font-weight: 400;
   color: #434382;
+  display: block;
+  margin: 5% auto;
+  width: 50%;
 }
-#stepThree{
-  display: none;
+
+#stepThree {
+  /* display: none; */
 }
 
 .bookingConfirmed {
@@ -920,4 +934,211 @@ textarea {
   border: none;
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+.change-color {
+  background-color: black;
+  color: white;
+  content: url("images/calender.png");
+}
+
+.ticks {
+  display: block;
+  margin: 0 auto;
+}
+
+.marginService {
+  margin-top: 12%;
+}
+
+::-webkit-calendar-picker-indicator {
+  /* filter: invert(0.8); */
+  color: #5F60B9CC;
+}
+
+#datePicker {
+  /* background-color: #5657A7 !important; */
+  color: #5F60B9CC !important;
+}
+
+#timePicker {
+  /* background-color: #5657A7 !important; */
+  color: #5F60B9CC !important;
+}
+
+.profileDiv {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+}
+
+.details {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.detailDiv {
+
+  /* text-align: center; */
+  background: #F6F7F9;
+  border-radius: 14.1861px;
+  margin-top: 5%;
+  padding: 1rem;
+  font-size: 22px;
+  font-weight: 400;
+  color: #434382;
+  display: block;
+  margin: 5% auto;
+  /* width: 50%; */
+}
+
+.profilesDiv {
+  display: block;
+  margin: 0 auto;
+  width: 20%;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: space-around; */
+}
+
+.informationDiv {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  justify-content: space-between;
+  /* margin-top: 10% */
+}
+
+.emailDiv {
+  background-color: #F6F7F9;
+  border-radius: 8px;
+
+
+}
+
+.emailDiv input {
+  width: 100%;
+  border: none;
+  background-color: #F6F7F9;
+  height: 50px;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.emailDiv input:focus {
+  outline: none;
+}
+
+.emailAddress input::placeholder {
+  color: #5F60B9 !important;
+}
+
+.emailAddress {
+  font-size: 20px;
+  font-weight: 500;
+  color: #434382;
+  margin-top: 5%;
+}
+
+.emailDiv input::placeholder {
+  /* outline: none; */
+  color: #434382;
+}
+
+.logout {
+  background-color: white;
+  color: #5657A7;
+  border-radius: 8px;
+  border: none;
+  padding: .5rem;
+}
+
+.login {
+  background-color: white;
+  color: #5657A7;
+  border-radius: 8px;
+  border: none;
+  padding: .5rem;
+  width: 10%;
+}
+
+.loginRequired {
+  background-color: #F6F7F9;
+  color: #434382;
+  text-align: center;
+  width: 50% !important;
+  margin-top: 3%;
+  font-size: 40px;
+  font-weight: 600;
+  padding: 4rem;
+  border-radius: 10px;
+
+}
+
+
+.box {
+  background: #F4F1FC;
+    border-radius: 20px;
+    margin-bottom: 5%;
+    width: 40%;
+    display: block;
+    margin: 5% auto;
+    padding: 2%;
+    position: absolute;
+    /* bottom: 127%; */
+    top: 35%;
+    left: 30%;
+    padding: 5rem;
+}
+.access{
+  font-size: 24px;
+  font-weight: 800;
+  color: #434382;
+  margin-top: 5%;
+  text-align: center;
+
+}
+.dontAccount{
+  font-size: 18px;
+  font-weight: 500;
+  color: #434382;
+  text-align: center;
+}
+
+.dontAccount span{
+  font-weight: 800;
+}
+.close{
+  position: absolute;
+  right: 8%;
+  width: 2rem;
+
+}
+
+.emailInput{
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  height: 50px;
+  padding: 1rem;
+}
+.emailInput:focus{
+  outline: none;
+}
+
+.emaildiv{
+  font-size: 20px;
+  font-weight: 500;
+  color: #434382;
+  margin-top: 5%;
+}
+.loginButton{
+  background-color: #434382;
+  color: #EFEBFB;
+  display: block;
+  margin: 7% auto;
+  border: none;
+  border-radius: 10px;
+  width: 40%;
+  /* height: 30px; */
+  padding: 0.5rem;
 }

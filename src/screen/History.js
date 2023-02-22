@@ -1,44 +1,47 @@
 import React, { useEffect, useState } from "react";
-import { json } from "react-router-dom";
+import { json, useNavigate } from "react-router-dom";
 import image2 from "../images/hand.png"
 import image1 from "../images/historical.png"
 import image3 from "../images/washrooms.png"
+import image8 from "../images/profile.PNG"
 
 let item ; 
 function History() {
    const[item,setItem] = useState([])
-   const[datas,setData] = useState("")
+   let email ;
+   const navigate = useNavigate()
+   if(localStorage.getItem("data")){
+      const emailData = JSON.parse(localStorage.getItem("data"))
+      email = emailData.data.email;
+     }
+
   
-   const url = "http://cleaningapp.8tkt.com/public/api/getbooking"
    useEffect(()=>{
+     
+      // console.log(email);
+      
+      
     
+      const url = "https://cleaningapp.8tkt.com/public/api/getbooking"
       const fetchData = () => {
-      const data = new FormData
-       data.append("email" ,"test@gmail.com" )
+         const data = new FormData;
+         data.append("email",email)
          fetch(url,{
             method : "POST",
             body : data
+         }).then((response)=>response.json()).then((data)=>{
+            // console.log(data.data);
+            setItem(data.data)
          })
-         .then(response => response.json())
-         .then((res) => {
-            // console.log(res.data);
-            const data = res.data;
-         //   item = data
-         setItem(data)
-         //   console.log(item);
-             
-         });
+     
      };
+     fetchData()
 
-
-    
-     fetchData();
-   //   getData();
-     console.log(item);
  },[]);
-
+   // console.log(item);
     return (
-      <div>
+    <div>
+      {email ?   <div>
           <div className="container">
         <div><p className="historical"><img src={image1} /><span className="cleaning">History</span></p></div>
         <div className="buttonPart">
@@ -77,7 +80,12 @@ function History() {
     </div>
           
        
-      </div>
+      </div> :   <div className="d-flex justify-content-center align-items-center">
+        <div className="container loginRequired">
+            <div><img src={image8}/></div>
+             <p>Login required</p>
+            </div></div>}
+    </div>
     )
 }
 

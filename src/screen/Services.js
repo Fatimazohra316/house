@@ -13,17 +13,17 @@ function Service() {
       const navigate = useNavigate()
    
       const getData = () => {
-         axios.post("http://cleaningapp.8tkt.com/public/api/categories").then((success) => {
+         axios.post("https://cleaningapp.8tkt.com/public/api/categories").then((success) => {
             // console.log(success.data.data);
             setItem(success.data.data)
             // console.log(item);
          }).catch((err) => {
-            console.log(err);
+            // console.log(err);
          })
-         axios.post("http://cleaningapp.8tkt.com/public/api/services").then((success) => {
+         axios.post("https://cleaningapp.8tkt.com/public/api/services").then((success) => {
             setArr(success.data.data)
          }).catch((err) => {
-            console.log(err);
+            // console.log(err);
          })
       }
       //   console.log(item[0].category_name);
@@ -39,7 +39,7 @@ function Service() {
          //   console.log(element);
    
       }
-      console.log(arr);
+      // console.log(arr);
       return (
          <div className="container">
             <div>

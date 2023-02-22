@@ -7,10 +7,13 @@ function Item(){
     const location = useLocation();
     const navigate = useNavigate()
 
-    function serviceMove(){
-      navigate("/booking")
+    function serviceMove(data){
+      navigate("/booking",{
+        state : data
+      })
     }
-     console.log(location.state.category_name);
+  
+     console.log(location.state);
     return(
         <div className="container mainDiv">
            <div className="itemDiv">
@@ -26,7 +29,7 @@ function Item(){
            </div>
            <div className="description">Description</div>
            <div className="des">{location.state.category_description}</div>
-           <div className="continueDiv"><button onClick={serviceMove} className="btn continueButton">Continue</button></div>
+           <div className="continueDiv"><button onClick={()=>serviceMove(location.state.category_name)} className="btn continueButton">Continue</button></div>
            
         </div>
         

@@ -18,16 +18,47 @@ import image10 from "../images/home.png";
 import Item from "../screen/item.js";
 import { useState } from "react";
 import Booking from "../screen/booking.js";
+import ConfirmBooking from "../screen/confirmBooking.js";
+import Profile from "../screen/profile.js";
+import { alignProperty } from "@mui/material/styles/cssUtils.js";
 
 
-
+const data = localStorage.getItem("data")
 function AppRouter(){
   const [active,setActive] = useState(true);
+  const [logOut,setLogout] = useState(true)
   // const location = useLocation()
+  const navigate = useNavigate()
 
-  if(window.location.href == "http://localhost:3000/signup"){
-    console.log(window.location.href);
+  
+  function logout(){
+    const data =  localStorage.clear("data")
+    if(!data){
+      navigate('/')
+      setLogout(false)
+
+    } else {
+      setLogout(true)
+    }
+
   }
+
+  function logIn(){
+    navigate("signin")
+    setLogout(true)
+  }
+  function validation(){
+    setLogout(true)
+
+
+  }
+  
+  function chatValidation(){
+    if(!data){
+       setLogout(true)
+    }
+  }
+  
 
     return(
       <>
@@ -47,20 +78,21 @@ function AppRouter(){
             
                 
                 </ul>
-                <div className="imageDiv">
+                {logOut ?  <div className="imageDiv">
                   <div><img src={image4} /></div>
-                  <div>Justine Boyle <img src={image5}/> </div>
-                  <button>logout</button>
-                </div>
+                  <div>Justine Boyle <img className="justin" src={image5}/> </div>
+                   <button onClick={logout} className="logout">Logout</button> 
+                </div> :<button onClick={logIn} className="login">Log In</button>  }
               </div>
             </div>
           </nav>
           <div className="contain linkDiv">
             <Link className="active" to="/"><img src={image10}/><span className="service">Home</span></Link>
             <Link to="services"><img src={image6}/><span className="service">Services</span></Link>
-            <Link to="history"><img src={image7}/><span  className="service">History</span></Link>
-            <Link to="chat"><img src={image8}/><span className="service">Chat Support</span></Link>
+            <Link to="history"><img src={image7}/><span onClick={validation}  className="service">History</span></Link>
+            <Link to="chat"><img src={image8}/><span onClick={chatValidation} className="service">Chat Support</span></Link>
             <Link to="setting"><img src={image9}/><span className="service">Settings</span></Link>
+            
           </div>
           </div>
         </div>)}
@@ -74,6 +106,8 @@ function AppRouter(){
             <Route path="setting" element={<Setting/>}/>
             <Route path="item" element={<Item/>}/>
             <Route path="booking" element={<Booking/>}/>
+            <Route path="confirmbooking" element={<ConfirmBooking/>}/>
+            <Route path="profile" element={<Profile/>}/>
             
           </Routes>
         </>
