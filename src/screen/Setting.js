@@ -1,15 +1,24 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import image1 from '../images/justin.png'
+import image1 from '../images/justin.png';
+import image8 from "../images/account.png";;
 
 
 function Setting() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    let email ;
+   
+    if(localStorage.getItem("data")){
+       const emailData = JSON.parse(localStorage.getItem("data"))
+       email = emailData.data.email;
+      }
+ 
     function moveToProfile(){
         navigate("/profile")
     }
     return (
-        <div className="container">
+       <div>
+          {email? <div className="container">
                <div>
                         <div onClick={moveToProfile} className="priceDiv">
                           <div className="profileDiv">
@@ -26,7 +35,12 @@ function Setting() {
                           </div>
                         </div>
                     </div> 
-        </div>
+        </div> : <div className="d-flex justify-content-center align-items-center">
+        <div className="container loginRequired">
+            <div><img src={image8}/></div>
+             <p>Login required</p>
+            </div></div>}
+       </div>
     )
 }
 

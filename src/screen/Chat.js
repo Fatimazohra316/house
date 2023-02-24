@@ -8,7 +8,7 @@ import image6 from "../images/tick.png"
 import image7 from "../images/sendButton.png"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import image8 from "../images/profile.PNG"
+import image8 from "../images/account.png";
 
 function Chat() {
     
@@ -20,8 +20,11 @@ function Chat() {
     if(localStorage.getItem("data")){
         const emailData = JSON.parse(localStorage.getItem("data"))
         email = emailData.data.email;
+        // setResult(true)
 
        }
+
+    
    
    
         function addMessage(){
@@ -53,7 +56,7 @@ function Chat() {
 
     return (
         <div>
-            {email ? <div className="container mb-5">
+            {email  ? <div className="container mb-5">
             <div><p className="historical"><img src={image1} /><span className="cleaning">Chat Support</span></p></div>
             <div className="rectangleBox">
                 <div><img className="sweep" src={image2} /> <span className="support">HOUSE SWEEPER SUPPORT</span></div>

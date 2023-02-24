@@ -16,7 +16,7 @@ import image8 from "../images/chat.png";
 import image9 from "../images/settings.png";
 import image10 from "../images/home.png";
 import Item from "../screen/item.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Booking from "../screen/booking.js";
 import ConfirmBooking from "../screen/confirmBooking.js";
 import Profile from "../screen/profile.js";
@@ -27,9 +27,10 @@ const data = localStorage.getItem("data")
 function AppRouter(){
   const [active,setActive] = useState(true);
   const [logOut,setLogout] = useState(true)
-  // const location = useLocation()
+  const location = useLocation()
   const navigate = useNavigate()
-
+  const { pathname } = location;
+  const splitLocation = pathname.split("/");
   
   function logout(){
     const data =  localStorage.clear("data")
@@ -43,21 +44,19 @@ function AppRouter(){
 
   }
 
+
+  useEffect(()=>{
+    if (!localStorage.getItem("data")) {
+      setLogout(false)
+  
+    }
+  },[])
+
   function logIn(){
     navigate("signin")
     setLogout(true)
   }
-  function validation(){
-    setLogout(true)
-
-
-  }
-  
-  function chatValidation(){
-    if(!data){
-       setLogout(true)
-    }
-  }
+ 
   
 
     return(
@@ -87,11 +86,11 @@ function AppRouter(){
             </div>
           </nav>
           <div className="contain linkDiv">
-            <Link className="active" to="/"><img src={image10}/><span className="service">Home</span></Link>
-            <Link to="services"><img src={image6}/><span className="service">Services</span></Link>
-            <Link to="history"><img src={image7}/><span onClick={validation}  className="service">History</span></Link>
-            <Link to="chat"><img src={image8}/><span onClick={chatValidation} className="service">Chat Support</span></Link>
-            <Link to="setting"><img src={image9}/><span className="service">Settings</span></Link>
+            <Link  className={splitLocation[1] === "" ? "active" : "service"} to="/"><img src={image10}/><span className="marginLeft">Home</span></Link>
+            <Link  className={splitLocation[1] === "services" ? "active" : "service"} to="services"><img src={image6}/><span className="marginLeft" >Services</span></Link>
+            <Link  className={splitLocation[1] === "history" ? "active" : "service"} to="history"><img src={image7}/><span className="marginLeft" >History</span></Link>
+            <Link  className={splitLocation[1] === "chat" ? "active" : "service"} to="chat"><img src={image8}/><span className="marginLeft" >Chat Support</span></Link>
+            <Link  className={splitLocation[1] === "setting" ? "active" : "service"} to="setting"><img src={image9}/><span className="marginLeft" >Settings</span></Link>
             
           </div>
           </div>

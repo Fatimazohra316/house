@@ -3,7 +3,7 @@ import { json, useNavigate } from "react-router-dom";
 import image2 from "../images/hand.png"
 import image1 from "../images/historical.png"
 import image3 from "../images/washrooms.png"
-import image8 from "../images/profile.PNG"
+import image8 from "../images/account.png";
 
 let item ; 
 function History() {
