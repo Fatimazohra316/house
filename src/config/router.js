@@ -21,11 +21,19 @@ import Booking from "../screen/booking.js";
 import ConfirmBooking from "../screen/confirmBooking.js";
 import Profile from "../screen/profile.js";
 import { alignProperty } from "@mui/material/styles/cssUtils.js";
+import axios from "axios";
 
 
 const data = localStorage.getItem("data")
 function AppRouter(){
-  const [active,setActive] = useState(true);
+  const [arr,setArr] = useState();
+  const [item, setItem] = useState([]);
+  const [filterList,setFilterList] = useState([])
+  const [filteredData,setFilteredData] = useState(false);
+
+  
+ 
+
   const [logOut,setLogout] = useState(true)
   const location = useLocation()
   const navigate = useNavigate()
@@ -45,17 +53,82 @@ function AppRouter(){
   }
 
 
+ 
+
+  const getData = () => {
+    axios.post("https://cleaningapp.8tkt.com/public/api/categories").then((success) => {
+      // console.log(success.data.data);
+      setItem(success.data.data)
+      // console.log(item);
+   }).catch((err) => {
+      console.log(err);
+   })
+    // fetch("https://cleaningapp.8tkt.com/public/api/categories",{
+    //   method :"POST"
+    // })
+    // .then((res) => res.json())
+    // .then(
+    //     (result) => {
+    //         // setIsLoaded(true);
+    //         setCategoryArr([result.data]);
+    //         // console.log(result);
+    //     }
+    // )
+ 
+ }
+
+ useEffect(() => {
+    getData()
+   
+ }, [])
+
+ 
+ 
+
+
+
+
   useEffect(()=>{
     if (!localStorage.getItem("data")) {
       setLogout(false)
   
     }
+    
+
   },[])
 
   function logIn(){
     navigate("signin")
     setLogout(true)
   }
+  const searchItem = (val)=>{
+    const filteredlist = item.filter((element)=>{
+      if(element.category_name.toLowerCase().includes(val.toLowerCase())){
+        setFilteredData(true)
+        return element
+      
+
+      }
+      else {
+        return val = ""
+      }
+      
+     
+      
+    })
+    setFilterList([...filteredlist])
+    console.log(filterList);
+    console.log(val);
+
+  }
+  function moveData(data) {
+    navigate("/Item", {
+       state: data
+     
+    })
+    //   console.log(element);
+    setFilteredData(false)
+ }
  
   
 
@@ -73,7 +146,7 @@ function AppRouter(){
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
                 <div className="inputDiv"><img className="search" src={image3}/><input className="form-control me-2 inputdiv" 
-                type="search" placeholder="Search here..." aria-label="Search here..."/></div>
+                type="search" onChange={(e)=>searchItem(e.target.value)}  placeholder="Search here..." aria-label="Search here..."/></div>
             
                 
                 </ul>
@@ -95,6 +168,18 @@ function AppRouter(){
           </div>
           </div>
         </div>)}
+       <div>
+        {filteredData ?   <div className="cardMainsDiv"  >
+               {filterList.map((data) => (
+                  <div className="card-body" onClick={()=>moveData(data)} >
+                     <div className="cardHalfPart"><img className="img" src={data.category_icon} /></div>
+                     <div className="category">{data.category_name}</div>
+
+
+                  </div>
+               ))}
+            </div> : null}
+       </div>
         <Routes>
             <Route path='signup' element={<SignUp/>}/>
             <Route path='signin' element={<SignIn/>}/>
@@ -109,6 +194,9 @@ function AppRouter(){
             <Route path="profile" element={<Profile/>}/>
             
           </Routes>
+
+         
+         
         </>
     )
 }

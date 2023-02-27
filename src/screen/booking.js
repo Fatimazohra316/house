@@ -45,6 +45,8 @@ function Booking() {
     const [fieldCounts, setFieldCounts] = useState(false)
     const [fieldServiceName, setFieldServiceName] = useState('');
     const [fieldServiceNames, setFieldServiceNames] = useState(false);
+    const [message, setMessage] = useState("");
+    const [check, setCheck] = useState(false)
 
 
 
@@ -63,6 +65,8 @@ function Booking() {
                 // console.log(data);
                 if (data.error) {
                     console.log(data.error);
+                    setCheck(true);
+                    setMessage(data.error)
                 }
                 else {
                     setCross(false)
@@ -335,6 +339,7 @@ function Booking() {
                                 <div className="emaildiv">
                                     <p>Password</p>
                                     <input onChange={(e) => setPassword(e.target.value)} className="emailInput" />
+                                    {check ? <p className="fieldDate">{message}</p> : null}
                                 </div>
                                 <button className="loginButton">Log In</button>
                             </div>
